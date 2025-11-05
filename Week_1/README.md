@@ -55,25 +55,25 @@ c스터디 과제 공지 및 제출을 위한 레포입니다.
 
 
 ### 프로그램 설명
-typedef struct
++ typedef struct
 {
 	int num;
 	node* next;
 
 }node; // 노드를 구조체로 구현
 
-node* head = NULL; // 노드의 head를 전역변수로 지정
-node* tail = NULL; // 노드의 tail을 전역변수로 지정
++ node* head = NULL; // 노드의 head를 전역변수로 지정
++ node* tail = NULL; // 노드의 tail을 전역변수로 지정
 
-s_insert(10); // 10을 노드 맨 앞에 추가
-e_insert(40); // 40을 노드 맨 뒤에 추가
++ s_insert(10); // 10을 노드 맨 앞에 추가
++ e_insert(40); // 40을 노드 맨 뒤에 추가
 
-int n; // 특정한 값을 저장할 변수 선언
-scanf("%d", &n); // 특정한 값 입력
-delete(n); // 입력 받은 특정한 값 n과 일치하는 노드가 있으면 삭제
-print(); // 모든 연결리스트의 원소들을 순차적으로 출력하는 함수
++ int n; // 특정한 값을 저장할 변수 선언
++ scanf("%d", &n); // 특정한 값 입력
++ delete(n); // 입력 받은 특정한 값 n과 일치하는 노드가 있으면 삭제
++ print(); // 모든 연결리스트의 원소들을 순차적으로 출력하는 함수
 
-void print() {
++ void print() {
 	node* search;
 	search = head;
 	while (search != NULL) {
