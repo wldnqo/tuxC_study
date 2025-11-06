@@ -53,76 +53,7 @@ c스터디 과제 공지 및 제출을 위한 레포입니다.
 
 
 ### 프로그램 설명
-+ typedef struct list
-{
-	int num;
-	struct list* next;
 
-}node; // 노드를 구조체로 구현
-
-+ node* head = NULL; // 노드의 head를 전역변수로 지정
-+ node* tail = NULL; // 노드의 tail을 전역변수로 지정
-
-+ s_insert(10); // 10을 노드 맨 앞에 추가
-+ e_insert(40); // 40을 노드 맨 뒤에 추가
-
-+ int n; // 특정한 값을 저장할 변수 선언
-+ scanf("%d", &n); // 특정한 값 입력
-+ delete(n); // 입력 받은 특정한 값 n과 일치하는 노드가 있으면 삭제
-+ print(); // 모든 연결리스트의 원소들을 순차적으로 출력하는 함수
-
-+ void delete(n) {
-	node* search, * previous; // 입력 받은 특정한 값n과 일치하는 노드를 찾는 search와 일치하는 노드 제외하고 다음 노드로 이어줄 previous 생성.
-	search = head; // 연결리스트의 처음부터 찾아야하므로 search는 head로 지정
-	previous = NULL; // 연결리스트 처음 부분의 전 부분은 NULL이므로 NULL지정
-	while (search != NULL) { // search가 NULL이 될 때까지 즉 연결리스트의 끝이 될 때까지 반복
-		if (search->num == n) { // search의 num이 특정한 값 n과 같다면 
-			previous = search; // 이전의 previous
-			search = search->next;
-		}
-		else { // search의 num이 특정한 값 n과 같지 않다면
-			search = search->next; // search는 다음 연결리스트로 지정
-		}
-	}
-}
-
-+ void s_insert(n) {
-	node* temp; //n을 연결리스트 맨 앞에 집어넣기 위해 임시 temp생성
-	temp = (node*)malloc(sizeof(node)); // temp 동적할당
-	if (head == NULL) { // 연결리스트의 값이 아무것도 없다면
-		head = temp; // 연결리스트의 head를 temp로 지정
-		temp->num = n; // temp의 num에 n추가
-		temp->next = NULL; // temp가 다음으로 가리킬 곳은 끝이기 때문에 NULL로 지정.
-	}
-	else { // 연결리스트의 값이 있다면
-		temp->next = head; // 맨 앞에 추가하기 위해서 temp의 next가 head를 가리키도록.
-		temp->num = n; // temp의 num에 n추가
-	}
-
-}
-
-+ void e_insert(n) {
-	node* temp; //n을 연결리스트 맨 뒤에 집어넣기 위해 임시 temp생성
-	temp = (node*)malloc(sizeof(node)); // temp 동적할당
-	node* search; // 맨 뒤를 찾기 위한 search 생성
-	search = head; // 현재 연결리스트의 맨 앞을 가리키도록.
-	while (search != NULL) { //search 노드가 연결리스트의 끝을 가리킬때까지 반복.
-		search = search->next; //search 노드가 연결리스트의 끝을 가리킬때까지 반복.
-	}
-	search->next = temp->num; //search노드가 연결리스트의 끝을 가리키고 있으므로 삽입할 temp노드의 num을 가리키도록 함.
-	temp->num = n; // temp노드의 num에 n을 삽입
-	temp->next = NULL; // temp노드가 다음으로 가리킬 부분은 연결리스트의 끝이므로 NULL 지정
-
-}
-
-+ void print() {
-	node* search;
-	search = head;
-	while (search != NULL) {
-		printf("%d\n", search->num);
-		search = search->next;
-	}
-} // 찾는 노드 생성, search 노드는 head노드를 가리킴, search 노드가 NULL을 가리킬 때까지 search가 가리키는 노드의 값을 출력 후 search는 search의 다음으로 연결된 리스트를 가리킴. search 노드가 NULL을 가리키면 즉 연결리스트의 끝을 가리키면 반복 종료.
 
 
 
