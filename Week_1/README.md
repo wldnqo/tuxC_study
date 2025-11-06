@@ -53,10 +53,10 @@ c스터디 과제 공지 및 제출을 위한 레포입니다.
 
 
 ### 프로그램 설명
-+ typedef struct
++ typedef struct list
 {
 	int num;
-	node* next;
+	struct list* next;
 
 }node; // 노드를 구조체로 구현
 
